@@ -1,0 +1,50 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.venv/
+venv/
+env/
+
+# Testing and tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Generated output
+results/
+output/
+*.log
+*.tmp
+
+# Secrets and environment files
+.env
+.env.*
+!.env.example
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Vivado generated files
+*.jou
+*.log
+*.str
+*.wdb
+*.vcd
+*.dcp
+*.bit
+*.ltx
+*.runs/
+*.cache/
+*.hw/
+*.sim/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/

@@ -1,0 +1,1074 @@
+{
+  "workload_name": "capacity_pressure_default_metadata",
+  "description": "Synthetic capacity_pressure workload; metadata mode: default_metadata. Reuse prediction horizon: 20 global access requests. Informed predictions are refreshed between completed observation windows using the synthetic workload model, not realized future accesses. Deadline, transfer-cost and quality-risk metadata remain fixed after initial allocation.",
+  "memory": {
+    "hbm_capacity_bytes": 1024,
+    "host_capacity_bytes": 2048
+  },
+  "events": [
+    {
+      "operation": "allocate",
+      "block_id": "CTX_00",
+      "size_bytes": 256
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_01",
+      "size_bytes": 256
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_02",
+      "size_bytes": 256
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_03",
+      "size_bytes": 256
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_04",
+      "size_bytes": 256
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_05",
+      "size_bytes": 256
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_06",
+      "size_bytes": 256
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_07",
+      "size_bytes": 256
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_08",
+      "size_bytes": 256
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_09",
+      "size_bytes": 256
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_10",
+      "size_bytes": 256
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_11",
+      "size_bytes": 256
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_06"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_07"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_08"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_09"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_10"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_11"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_06"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_07"
+    },
+    {
+      "operation": "advance_time",
+      "delta_ms": 10.0
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_08"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_09"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_10"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_11"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_06"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_07"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_08"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_09"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_10"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_11"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "advance_time",
+      "delta_ms": 10.0
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_06"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_07"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_08"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_09"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_10"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_11"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_06"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_07"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_08"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_09"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_10"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_11"
+    },
+    {
+      "operation": "advance_time",
+      "delta_ms": 10.0
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_06"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_07"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_08"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_09"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_10"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_11"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_06"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_07"
+    },
+    {
+      "operation": "advance_time",
+      "delta_ms": 10.0
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_08"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_09"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_10"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_11"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_06"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_07"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_08"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_09"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_10"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_11"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "advance_time",
+      "delta_ms": 10.0
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_06"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_07"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_08"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_09"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_10"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_11"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_06"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_07"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_08"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_09"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_10"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_11"
+    },
+    {
+      "operation": "advance_time",
+      "delta_ms": 10.0
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_06"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_07"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_08"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_09"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_10"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_11"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_06"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_07"
+    },
+    {
+      "operation": "advance_time",
+      "delta_ms": 10.0
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_08"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_09"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_10"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_11"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_06"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_07"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_08"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_09"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_10"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_11"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "advance_time",
+      "delta_ms": 10.0
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_06"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_07"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_08"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_09"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_10"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_11"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_06"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_07"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_08"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_09"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_10"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_11"
+    },
+    {
+      "operation": "advance_time",
+      "delta_ms": 10.0
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_06"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_07"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_08"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_09"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_10"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_11"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_06"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_07"
+    },
+    {
+      "operation": "advance_time",
+      "delta_ms": 10.0
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_08"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_09"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_10"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_11"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_06"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_07"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_08"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_09"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_10"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_11"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "advance_time",
+      "delta_ms": 10.0
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_06"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_07"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_08"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_09"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_10"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_11"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_06"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_07"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_08"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_09"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_10"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_11"
+    }
+  ]
+}

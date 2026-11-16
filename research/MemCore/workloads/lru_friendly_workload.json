@@ -1,0 +1,58 @@
+
+{
+    "workload_name": "MemCore LRU-Friendly Context Workload",
+    "description": "Synthetic context trace where recent access is a useful predictor of future reuse.",
+    "memory": {
+        "hbm_capacity_bytes": 1024,
+        "host_capacity_bytes": 4096
+    },
+    "events": [
+        {
+            "operation": "allocate",
+            "block_id": "CTX_A",
+            "size_bytes": 512,
+            "deadline_ms": 80.0,
+            "reuse_probability": 0.95,
+            "estimated_transfer_ms": 4.0,
+            "quality_risk": 0.7
+        },
+        {
+            "operation": "allocate",
+            "block_id": "CTX_B",
+            "size_bytes": 512,
+            "deadline_ms": 10000.0,
+            "reuse_probability": 0.05,
+            "estimated_transfer_ms": 0.1,
+            "quality_risk": 0.0
+        },
+        {
+            "operation": "access",
+            "block_id": "CTX_A"
+        },
+        {
+            "operation": "advance_time",
+            "delta_ms": 10.0
+        },
+        {
+            "operation": "allocate",
+            "block_id": "CTX_C",
+            "size_bytes": 512,
+            "deadline_ms": 500.0,
+            "reuse_probability": 0.5,
+            "estimated_transfer_ms": 1.0,
+            "quality_risk": 0.1
+        },
+        {
+            "operation": "access",
+            "block_id": "CTX_A"
+        },
+        {
+            "operation": "access",
+            "block_id": "CTX_B"
+        },
+        {
+            "operation": "access",
+            "block_id": "CTX_C"
+        }
+    ]
+}

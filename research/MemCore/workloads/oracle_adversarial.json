@@ -1,0 +1,46 @@
+{
+  "workload_name": "MemCore Adversarial Metadata Versus Future Access",
+  "description": "Controlled synthetic trace testing whether current reuse metadata can conflict with recency and future access. Not a GPU benchmark.",
+  "memory": {
+    "hbm_capacity_bytes": 1024,
+    "host_capacity_bytes": 4096
+  },
+  "events": [
+    {
+      "operation": "allocate",
+      "block_id": "CTX_A",
+      "size_bytes": 512,
+      "reuse_probability": 0.10,
+      "estimated_transfer_ms": 1.0,
+      "quality_risk": 0.0
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_B",
+      "size_bytes": 512,
+      "reuse_probability": 0.90,
+      "estimated_transfer_ms": 1.0,
+      "quality_risk": 0.0
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_B"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_A"
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_C",
+      "size_bytes": 512,
+      "reuse_probability": 0.50,
+      "estimated_transfer_ms": 1.0,
+      "quality_risk": 0.0
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_A"
+    }
+  ]
+}

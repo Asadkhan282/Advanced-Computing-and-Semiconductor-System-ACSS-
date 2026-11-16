@@ -1,0 +1,49 @@
+{
+  "workload_name": "MemCore SLO Margin Near-Tie Workload",
+  "description": "Controlled synthetic trace where two contexts have SLO scores within the configured 0.03 margin, allowing recency-based tie-breaking to be evaluated.",
+  "memory": {
+    "hbm_capacity_bytes": 1024,
+    "host_capacity_bytes": 4096
+  },
+  "events": [
+    {
+      "operation": "allocate",
+      "block_id": "CTX_A",
+      "size_bytes": 512,
+      "deadline_ms": 1000.0,
+      "reuse_probability": 0.50,
+      "estimated_transfer_ms": 2.0,
+      "quality_risk": 0.50
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_B",
+      "size_bytes": 512,
+      "deadline_ms": 1000.0,
+      "reuse_probability": 0.52,
+      "estimated_transfer_ms": 2.0,
+      "quality_risk": 0.50
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_B"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_A"
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_C",
+      "size_bytes": 512,
+      "deadline_ms": 1000.0,
+      "reuse_probability": 0.50,
+      "estimated_transfer_ms": 2.0,
+      "quality_risk": 0.50
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_A"
+    }
+  ]
+}

@@ -1,0 +1,1782 @@
+{
+  "workload_name": "prediction_mismatch_informed",
+  "description": "Synthetic prediction_mismatch workload; metadata mode: informed. Reuse prediction horizon: 20 global access requests. Informed predictions are refreshed between completed observation windows using the synthetic workload model, not realized future accesses. Deadline, transfer-cost and quality-risk metadata remain fixed after initial allocation.",
+  "memory": {
+    "hbm_capacity_bytes": 1024,
+    "host_capacity_bytes": 2048
+  },
+  "events": [
+    {
+      "operation": "allocate",
+      "block_id": "CTX_00",
+      "size_bytes": 256,
+      "deadline_ms": 100,
+      "reuse_probability": 0.1,
+      "estimated_transfer_ms": 0.3423,
+      "quality_risk": 0.1306
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_01",
+      "size_bytes": 256,
+      "deadline_ms": 50,
+      "reuse_probability": 0.1,
+      "estimated_transfer_ms": 3.7719,
+      "quality_risk": 0.5154
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_02",
+      "size_bytes": 256,
+      "deadline_ms": 50,
+      "reuse_probability": 0.1,
+      "estimated_transfer_ms": 0.5777,
+      "quality_risk": 0.0521
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_03",
+      "size_bytes": 256,
+      "deadline_ms": 50,
+      "reuse_probability": 0.1,
+      "estimated_transfer_ms": 4.8814,
+      "quality_risk": 0.0311
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_04",
+      "size_bytes": 256,
+      "deadline_ms": 500,
+      "reuse_probability": 0.1,
+      "estimated_transfer_ms": 0.3094,
+      "quality_risk": 0.6795
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_05",
+      "size_bytes": 256,
+      "deadline_ms": 250,
+      "reuse_probability": 0.1,
+      "estimated_transfer_ms": 4.1334,
+      "quality_risk": 0.9431
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_06",
+      "size_bytes": 256,
+      "deadline_ms": 250,
+      "reuse_probability": 0.9,
+      "estimated_transfer_ms": 6.451,
+      "quality_risk": 0.4878
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_07",
+      "size_bytes": 256,
+      "deadline_ms": 500,
+      "reuse_probability": 0.9,
+      "estimated_transfer_ms": 2.7932,
+      "quality_risk": 0.7276
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_08",
+      "size_bytes": 256,
+      "deadline_ms": 100,
+      "reuse_probability": 0.9,
+      "estimated_transfer_ms": 6.4736,
+      "quality_risk": 0.8993
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_09",
+      "size_bytes": 256,
+      "deadline_ms": 50,
+      "reuse_probability": 0.9,
+      "estimated_transfer_ms": 2.9875,
+      "quality_risk": 0.7513
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_10",
+      "size_bytes": 256,
+      "deadline_ms": 500,
+      "reuse_probability": 0.9,
+      "estimated_transfer_ms": 2.3041,
+      "quality_risk": 0.3952
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_11",
+      "size_bytes": 256,
+      "deadline_ms": 1000,
+      "reuse_probability": 0.9,
+      "estimated_transfer_ms": 0.5895,
+      "quality_risk": 0.4396
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_09"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_09"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "advance_time",
+      "delta_ms": 10.0
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_00",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_01",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_02",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_03",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_04",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_05",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_06",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_07",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_08",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_09",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_10",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_11",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_09"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_06"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "advance_time",
+      "delta_ms": 10.0
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_00",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_01",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_02",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_03",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_04",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_05",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_06",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_07",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_08",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_09",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_10",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_11",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_09"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_06"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_10"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_10"
+    },
+    {
+      "operation": "advance_time",
+      "delta_ms": 10.0
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_00",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_01",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_02",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_03",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_04",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_05",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_06",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_07",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_08",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_09",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_10",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_11",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_10"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_10"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "advance_time",
+      "delta_ms": 10.0
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_00",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_01",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_02",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_03",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_04",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_05",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_06",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_07",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_08",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_09",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_10",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_11",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_07"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_11"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_08"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_08"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "advance_time",
+      "delta_ms": 10.0
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_00",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_01",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_02",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_03",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_04",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_05",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_06",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_07",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_08",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_09",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_10",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_11",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_08"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_10"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "advance_time",
+      "delta_ms": 10.0
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_00",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_01",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_02",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_03",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_04",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_05",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_06",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_07",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_08",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_09",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_10",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_11",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_11"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_06"
+    },
+    {
+      "operation": "advance_time",
+      "delta_ms": 10.0
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_00",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_01",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_02",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_03",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_04",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_05",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_06",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_07",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_08",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_09",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_10",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_11",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_07"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "advance_time",
+      "delta_ms": 10.0
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_00",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_01",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_02",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_03",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_04",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_05",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_06",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_07",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_08",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_09",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_10",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_11",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_07"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_07"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_11"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "advance_time",
+      "delta_ms": 10.0
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_00",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_01",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_02",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_03",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_04",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_05",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_06",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_07",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_08",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_09",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_10",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_11",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_06"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_07"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_09"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "advance_time",
+      "delta_ms": 10.0
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_00",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_01",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_02",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_03",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_04",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_05",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_06",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_07",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_08",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_09",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_10",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_11",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_09"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_08"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_09"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "advance_time",
+      "delta_ms": 10.0
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_00",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_01",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_02",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_03",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_04",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_05",
+      "reuse_probability": 0.1
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_06",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_07",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_08",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_09",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_10",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "update_metadata",
+      "block_id": "CTX_11",
+      "reuse_probability": 0.9
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_07"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_06"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_06"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_09"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    }
+  ]
+}

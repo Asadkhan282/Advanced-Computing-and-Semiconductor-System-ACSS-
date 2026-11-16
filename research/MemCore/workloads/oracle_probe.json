@@ -1,0 +1,94 @@
+{
+  "workload_name": "Oracle Scalability Probe",
+  "description": "Small synthetic trace for measuring exact oracle state growth.",
+  "memory": {
+    "hbm_capacity_bytes": 512,
+    "host_capacity_bytes": 512
+  },
+  "events": [
+    {
+      "operation": "allocate",
+      "block_id": "CTX_00",
+      "size_bytes": 256
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_01",
+      "size_bytes": 256
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_02",
+      "size_bytes": 256
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_03",
+      "size_bytes": 256
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    }
+  ]
+}

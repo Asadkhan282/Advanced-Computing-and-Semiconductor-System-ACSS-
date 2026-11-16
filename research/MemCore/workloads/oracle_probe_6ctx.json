@@ -1,0 +1,136 @@
+{
+  "workload_name": "Oracle Scalability Probe 6 Contexts",
+  "description": "Six-context synthetic trace for measuring exact oracle state growth.",
+  "memory": {
+    "hbm_capacity_bytes": 768,
+    "host_capacity_bytes": 768
+  },
+  "events": [
+    {
+      "operation": "allocate",
+      "block_id": "CTX_00",
+      "size_bytes": 256
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_01",
+      "size_bytes": 256
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_02",
+      "size_bytes": 256
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_03",
+      "size_bytes": 256
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_04",
+      "size_bytes": 256
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_05",
+      "size_bytes": 256
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_05"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_01"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_03"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_02"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_00"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_04"
+    }
+  ]
+}

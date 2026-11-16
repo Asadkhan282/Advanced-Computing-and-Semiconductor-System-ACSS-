@@ -1,0 +1,38 @@
+
+{
+  "workload_name": "MemCore Offline Oracle Manual Validation",
+  "description": "Small deterministic trace designed to verify future-aware HBM victim selection.",
+  "memory": {
+    "hbm_capacity_bytes": 1024,
+    "host_capacity_bytes": 4096
+  },
+  "events": [
+    {
+      "operation": "allocate",
+      "block_id": "CTX_A",
+      "size_bytes": 512
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_B",
+      "size_bytes": 512
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_B"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_A"
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_C",
+      "size_bytes": 512
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_A"
+    }
+  ]
+}

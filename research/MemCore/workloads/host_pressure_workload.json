@@ -1,0 +1,70 @@
+{
+  "workload_name": "MemCore Host Pressure Workload",
+  "description": "Synthetic trace testing HBM victim selection and host-tier overflow under constrained capacity.",
+  "memory": {
+    "hbm_capacity_bytes": 1024,
+    "host_capacity_bytes": 512
+  },
+  "events": [
+    {
+      "operation": "allocate",
+      "block_id": "CTX_A",
+      "size_bytes": 512,
+      "deadline_ms": 10000.0,
+      "reuse_probability": 0.05,
+      "estimated_transfer_ms": 0.1,
+      "quality_risk": 0.0
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_B",
+      "size_bytes": 512,
+      "deadline_ms": 100.0,
+      "reuse_probability": 0.95,
+      "estimated_transfer_ms": 5.0,
+      "quality_risk": 0.8
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_B"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_A"
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_C",
+      "size_bytes": 512,
+      "deadline_ms": 60.0,
+      "reuse_probability": 0.65,
+      "estimated_transfer_ms": 2.0,
+      "quality_risk": 0.2
+    },
+    {
+      "operation": "allocate",
+      "block_id": "CTX_D",
+      "size_bytes": 512,
+      "deadline_ms": 40.0,
+      "reuse_probability": 0.85,
+      "estimated_transfer_ms": 3.0,
+      "quality_risk": 0.6
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_B"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_A"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_C"
+    },
+    {
+      "operation": "access",
+      "block_id": "CTX_D"
+    }
+  ]
+}

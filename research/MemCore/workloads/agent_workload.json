@@ -1,0 +1,62 @@
+
+{
+    "workload_name": "MemCore Agent Context Workload",
+    "description": "Synthetic agent context trace with competing recency, deadline, reuse, transfer-cost, and quality-risk signals.",
+    "memory": {
+        "hbm_capacity_bytes": 1024,
+        "host_capacity_bytes": 4096
+    },
+    "events": [
+        {
+            "operation": "allocate",
+            "block_id": "CTX_A",
+            "size_bytes": 512,
+            "deadline_ms": 10000.0,
+            "reuse_probability": 0.05,
+            "estimated_transfer_ms": 0.1,
+            "quality_risk": 0.0
+        },
+        {
+            "operation": "allocate",
+            "block_id": "CTX_B",
+            "size_bytes": 512,
+            "deadline_ms": 100.0,
+            "reuse_probability": 0.95,
+            "estimated_transfer_ms": 5.0,
+            "quality_risk": 0.8
+        },
+        {
+            "operation": "access",
+            "block_id": "CTX_B"
+        },
+        {
+            "operation": "access",
+            "block_id": "CTX_A"
+        },
+        {
+            "operation": "advance_time",
+            "delta_ms": 20.0
+        },
+        {
+            "operation": "allocate",
+            "block_id": "CTX_C",
+            "size_bytes": 512,
+            "deadline_ms": 60.0,
+            "reuse_probability": 0.65,
+            "estimated_transfer_ms": 2.0,
+            "quality_risk": 0.2
+        },
+        {
+            "operation": "access",
+            "block_id": "CTX_B"
+        },
+        {
+            "operation": "access",
+            "block_id": "CTX_A"
+        },
+        {
+            "operation": "access",
+            "block_id": "CTX_C"
+        }
+    ]
+}
