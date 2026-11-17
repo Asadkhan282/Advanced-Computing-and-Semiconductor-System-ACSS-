@@ -12,10 +12,11 @@ MemCore is an experimental memory-management and scheduling simulator for AI inf
 
 It investigates memory placement, eviction policies, reuse prediction, deadline-aware scheduling, and adaptive memory management across synthetic workloads.
 
-Project location:
-esearch/MemCore/"
-"
+- **Project directory:** [research/MemCore](research/MemCore/)
+- **Experimental results:** [MemCore benchmark results](research/MemCore/results/benchmark_results.md)
+- **Project documentation:** [MemCore README](research/MemCore/README.md)
 
+Research areas:
 - AI accelerator memory systems
 - GPU inference memory management
 - Workload-aware scheduling
@@ -23,13 +24,16 @@ esearch/MemCore/"
 - Energy-efficient computing
 
 ## Engineering principles
+
 - Reproducible experiments
 - Transparent methodology
 - Clearly stated simulation assumptions
 - No unsupported hardware-performance claims
 
 ## Website
+
 https://acss-tech.com
 
 ## Repository status
+
 MemCore is currently a software-based synthetic research simulator. Physical hardware validation and completed FPGA implementation are not claimed.
