@@ -57,6 +57,7 @@ class MemoryManager:
         "SLO_MARGIN",
         "ADAPTIVE_SLO",
         "ADAPTIVE_MARGIN",
+        "PREQUENTIAL_SLO_MARGIN",
     )
 
     DEFAULT_SLO_MARGIN = 0.03
@@ -66,6 +67,12 @@ class MemoryManager:
     REUSE_MIN_OBSERVATIONS = 5
 
     DEFAULT_REUSE_PREVALENCE = 0.5
+
+    # Experimental prequential guard parameters.
+    PREQUENTIAL_FAILURE_WINDOW = 20
+    PREQUENTIAL_RECOVERY_WINDOW = 12
+    PREQUENTIAL_FAILURE_THRESHOLD = 0.02
+    PREQUENTIAL_RECOVERY_THRESHOLD = -0.02
 
     def __init__(
         self,
@@ -152,6 +159,12 @@ class MemoryManager:
         # Context-specific completed prediction history:
         # (block_id, predicted_probability, observed_reuse)
         self.reuse_prediction_context_observations = deque(
+            maxlen=self.REUSE_OBSERVATION_WINDOW
+        )
+
+        # Completed forecasts with baselines frozen at registration:
+        # (predicted_probability, baseline_probability, outcome)
+        self.reuse_prediction_prequential_observations = deque(
             maxlen=self.REUSE_OBSERVATION_WINDOW
         )
 
@@ -246,6 +259,9 @@ class MemoryManager:
         prediction = {
             "block_id": block_id,
             "predicted_probability": float(probability),
+            "baseline_probability": float(
+                self.get_observed_reuse_rate()
+            ),
             "observed_reuse": False,
             "expires_at": expires_at,
         }
@@ -331,6 +347,16 @@ class MemoryManager:
                 )
             )
 
+            # The baseline was frozen when the prediction
+            # was registered, before its outcome was known.
+            self.reuse_prediction_prequential_observations.append(
+                (
+                    predicted,
+                    prediction["baseline_probability"],
+                    observed,
+                )
+            )
+
             self._reuse_prediction_metrics_cache = None
 
     # ---------------------------------------------------------
@@ -404,6 +430,72 @@ class MemoryManager:
     # ---------------------------------------------------------
     # Global prediction metrics
     # ---------------------------------------------------------
+
+    def get_prequential_reuse_metrics(self, window=None):
+        """
+        Compare completed model predictions against baselines
+        frozen before their outcomes were observed.
+
+        Positive excess_brier: supplied predictions were worse.
+        Negative excess_brier: supplied predictions were better.
+
+        A window selects the most recently completed observations.
+        """
+
+        if window is not None:
+            if (
+                isinstance(window, bool)
+                or not isinstance(window, int)
+                or window <= 0
+            ):
+                raise ValueError(
+                    "window must be a positive integer or None."
+                )
+
+        history = list(
+            self.reuse_prediction_prequential_observations
+        )
+
+        if window is not None:
+            history = history[-window:]
+
+        count = len(history)
+
+        if count == 0:
+            return {
+                "observations": 0,
+                "model_brier": None,
+                "baseline_brier": None,
+                "excess_brier": None,
+                "skill_score": None,
+            }
+
+        model_brier = sum(
+            (predicted - observed) ** 2
+            for predicted, baseline, observed in history
+        ) / count
+
+        baseline_brier = sum(
+            (baseline - observed) ** 2
+            for predicted, baseline, observed in history
+        ) / count
+
+        excess_brier = model_brier - baseline_brier
+
+        skill_score = (
+            1.0 - model_brier / baseline_brier
+            if baseline_brier > 1e-12
+            else None
+        )
+
+        return {
+            "observations": count,
+            "model_brier": model_brier,
+            "baseline_brier": baseline_brier,
+            "excess_brier": excess_brier,
+            "skill_score": skill_score,
+        }
+
 
     def _calculate_reuse_prediction_metrics(self):
         """Calculate metrics across all completed predictions."""
@@ -821,6 +913,105 @@ class MemoryManager:
     # Adaptive ranking
     # ---------------------------------------------------------
 
+    # ---------------------------------------------------------
+    # Experimental prequential evidence guard
+    # ---------------------------------------------------------
+
+    def get_prequential_guard_status(self):
+        """
+        Evaluate online prediction quality using completed
+        forecasts whose baselines were frozen at registration.
+
+        This method does not modify memory placement or
+        prediction histories.
+
+        The policy guards against poorly performing reuse
+        predictions and releases the guard when recent
+        evidence supports predictive recovery.
+        """
+
+        slow = self.get_prequential_reuse_metrics(
+            window=self.PREQUENTIAL_FAILURE_WINDOW
+        )
+
+        failure = (
+            slow["observations"]
+            >= self.PREQUENTIAL_FAILURE_WINDOW
+            and slow["excess_brier"] is not None
+            and slow["excess_brier"]
+            > self.PREQUENTIAL_FAILURE_THRESHOLD
+        )
+
+        fast = self.get_prequential_reuse_metrics(
+            window=self.PREQUENTIAL_RECOVERY_WINDOW
+        )
+
+        recovered = (
+            failure
+            and fast["observations"]
+            >= self.PREQUENTIAL_RECOVERY_WINDOW
+            and fast["excess_brier"] is not None
+            and fast["excess_brier"]
+            <= self.PREQUENTIAL_RECOVERY_THRESHOLD
+        )
+
+        guard_active = failure and not recovered
+
+        return {
+            "guard_active": bool(guard_active),
+            "failure_detected": bool(failure),
+            "recovery_detected": bool(recovered),
+            "slow_observations": slow["observations"],
+            "fast_observations": fast["observations"],
+            "slow_excess_brier": slow["excess_brier"],
+            "fast_excess_brier": fast["excess_brier"],
+        }
+
+    def _select_prequential_victim(self, contexts):
+        """
+        Select an HBM victim with prequential evidence gating.
+
+        When the guard is inactive, supplied reuse probabilities
+        are preserved.
+
+        When the guard is active, reuse probabilities are
+        replaced by observed global reuse prevalence.
+
+        Scheduler weights and the SLO eviction margin
+        remain unchanged.
+        """
+
+        if not contexts:
+            raise ValueError(
+                "Cannot select a victim from empty contexts."
+            )
+
+        guard = self.get_prequential_guard_status()
+
+        if not guard["guard_active"]:
+            return self.scheduler.select_victim(
+                contexts,
+                now_ms=self.current_time_ms,
+                margin=self.slo_margin,
+            )
+
+        prevalence = self.get_observed_reuse_rate()
+
+        adjusted_contexts = []
+
+        for context in contexts:
+            item = dict(context)
+
+            item["reuse_probability"] = prevalence
+
+            adjusted_contexts.append(item)
+
+        return self.scheduler.select_victim(
+            adjusted_contexts,
+            now_ms=self.current_time_ms,
+            margin=self.slo_margin,
+        )
+
     def _rank_contexts_adaptively(self, contexts):
         """
         Rank contexts with comparable scheduler scores.
@@ -949,6 +1140,12 @@ class MemoryManager:
                 contexts,
                 now_ms=self.current_time_ms,
                 margin=self.slo_margin,
+            )
+
+        if self.policy == "PREQUENTIAL_SLO_MARGIN":
+
+            return self._select_prequential_victim(
+                contexts
             )
 
         if self.policy in (
@@ -1274,6 +1471,23 @@ class MemoryManager:
         assert len(
             self.reuse_prediction_context_observations
         ) <= self.REUSE_OBSERVATION_WINDOW
+
+        assert len(
+            self.reuse_prediction_prequential_observations
+        ) <= self.REUSE_OBSERVATION_WINDOW
+
+        assert len(
+            self.reuse_prediction_prequential_observations
+        ) == len(self.reuse_prediction_observations)
+
+        for predicted, baseline, observed in (
+            self.reuse_prediction_prequential_observations
+        ):
+            assert math.isfinite(predicted)
+            assert math.isfinite(baseline)
+            assert 0.0 <= predicted <= 1.0
+            assert 0.0 <= baseline <= 1.0
+            assert observed in (0.0, 1.0)
 
         # Validate global completed observations.
         for predicted, observed in self.reuse_prediction_observations:
